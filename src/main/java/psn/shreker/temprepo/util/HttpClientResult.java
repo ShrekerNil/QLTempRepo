@@ -28,4 +28,5 @@ public class HttpClientResult implements Serializable {
 		this.code = code;
 		this.content = content;
 	}
+	
 }

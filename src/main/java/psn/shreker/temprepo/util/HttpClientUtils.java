@@ -82,8 +82,8 @@ public class HttpClientUtils {
 		// 设置请求头
 		handleHeader(headers, httpGet);
  
-		try ( CloseableHttpClient httpClient = HttpClients.createDefault();
-			CloseableHttpResponse httpResponse = httpClient.execute(httpGet) ) {
+		try (CloseableHttpClient httpClient = HttpClients.createDefault();
+			 CloseableHttpResponse httpResponse = httpClient.execute(httpGet) ) {
 			// 执行请求并获得响应结果
 			
 			return getHttpClientResult(httpResponse, httpClient);
@@ -132,8 +132,8 @@ public class HttpClientUtils {
 		// 封装请求参数
 		packageParam(params, httpPost);
  
-		try(CloseableHttpClient httpClient = HttpClients.createDefault();
-			CloseableHttpResponse httpResponse = httpClient.execute(httpPost)) {
+		try (CloseableHttpClient httpClient = HttpClients.createDefault();
+			 CloseableHttpResponse httpResponse = httpClient.execute(httpPost)) {
 			// 执行请求并获得响应结果
 			return getHttpClientResult(httpResponse, httpClient);
 		}

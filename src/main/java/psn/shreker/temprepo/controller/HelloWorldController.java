@@ -1,21 +1,31 @@
 package psn.shreker.temprepo.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import psn.shreker.temprepo.util.HttpClientResult;
+import psn.shreker.temprepo.util.HttpClientUtils;
 
 /**
  * get和post请求测试controller
  */
+@Slf4j
 @RestController
 @RequestMapping("/hello")
 public class HelloWorldController {
  
 	@GetMapping("/get")
 	public String get() {
+		try {
+			HttpClientResult httpClientResult = HttpClientUtils.get("https://www.baidu.com");
+			System.out.println(httpClientResult);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return "get无参请求成功";
 	}
  
