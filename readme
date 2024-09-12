@@ -1,0 +1,1 @@
+nohup java -Xms256m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=128m -server -Dserver.port-8089 -jar <your-project>.jar '<your-project>' --spring.profiles.active=dev >> ./test_info_8099.1og 2>&1 &
