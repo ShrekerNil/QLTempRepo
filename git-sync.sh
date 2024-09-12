@@ -143,15 +143,15 @@ else
     echo_info "Nothing to push, Skipping ..."
 fi
 
-# # Push to gitee master
-# if [[ $need_push -eq 1 ]]; then
-#     print_start_line
-#     echo_info "Pushing Local Changes to Gitee Remote: ${cur_dir}"
-#     result=`git push -f gitee main`
-#     judgement "git push" $? "$result"
-# else
-#     echo_info "Nothing to push, Skipping ..."
-# fi
+# Push to gitee master
+if [[ $need_push -eq 1 ]]; then
+    print_start_line
+    echo_info "Pushing Local Changes to Gitee Remote: ${cur_dir}"
+    result=`git push -f gitee main`
+    judgement "git push" $? "$result"
+else
+    echo_info "Nothing to push, Skipping ..."
+fi
 
 
 # pause when scripts without param
